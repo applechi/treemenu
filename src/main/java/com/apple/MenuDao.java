@@ -102,9 +102,10 @@ public class MenuDao {
             if (nextMenuList.size() != 0) {
                 //设置当前菜单的下一级菜单列表
                 menu.setChildMenus(nextMenuList);
+                //递归调用第二层的
+                getMenuTree(nextMenuList);
             }
-            //递归调用第二层的
-            getMenuTree(nextMenuList);
+
 
         }
 
