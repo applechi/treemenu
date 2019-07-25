@@ -111,6 +111,10 @@ public class MenuDao {
 
     }
 
+    /**
+     * 测试输出结果
+     * @param args
+     */
     public static void main(String[] args) {
         MenuDao menuDao = new MenuDao();
         //先获得顶级菜单集合
