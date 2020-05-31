@@ -1,4 +1,6 @@
-package com.apple;
+package com.apple.easytest;
+
+import com.apple.entity.Menu;
 
 import java.util.ArrayList;
 import java.util.List;

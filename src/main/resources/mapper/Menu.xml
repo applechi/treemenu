@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apple.mapper.MenuMapper">
+
+    <resultMap id="getSelf" type="com.apple.entity.Menu">
+        <id column="id" property="id"></id>
+        <result column="dep_name" property="name"></result>
+        <collection property="childMenus" select="getMenuTreeList" column="id"></collection>
+        <!--查到的cid作为下次的pid-->
+    </resultMap>
+
+    <select id="getMenuTreeList" resultMap="getSelf">
+        select * from t_b_department where  parent_dep_id=#{pid}
+    </select>
+
+    <select id="getMenuTreeListByFunction" resultType="com.apple.entity.Menu">
+      SELECT * FROM t_areainfo WHERE FIND_IN_SET(id,getChildList(46));
+    </select>
+
+</mapper>

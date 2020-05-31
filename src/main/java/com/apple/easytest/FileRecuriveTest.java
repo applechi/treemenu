@@ -1,4 +1,4 @@
-package com.apple;
+package com.apple.easytest;
 
 import java.io.File;
 
@@ -16,9 +16,7 @@ final class FileRecuriveTest {
 
         File file = new File("F:\\aabbcc");
         RecuriveFile(file.listFiles());
-        //System.out.println("isDirectory:" + file.isDirectory());// false
-
-
+        System.out.println("isDirectory:" + file.isDirectory());// false
 
     }
 
@@ -27,7 +25,7 @@ final class FileRecuriveTest {
         for (int i = 0; i < nextFileList.length; i++) {
             File tempFile=nextFileList[i];
             if (tempFile.isDirectory()){
-                //System.out.println("---Apple Boy---"+tempFile.getName());
+                System.out.println("---Apple Boy---"+tempFile.getName());
                 RecuriveFile(tempFile.listFiles());
             }else {
                 System.out.println("---Apple Boy---"+tempFile.getPath());

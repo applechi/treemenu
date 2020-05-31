@@ -1,4 +1,4 @@
-package com.apple;
+package com.apple.entity;
 
 import java.util.List;
 
